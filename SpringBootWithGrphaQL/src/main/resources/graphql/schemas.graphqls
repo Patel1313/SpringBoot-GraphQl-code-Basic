@@ -1,0 +1,30 @@
+type Query{
+	welcome: String
+	findAll: [Employee]
+	findById(id: ID): Employee
+}
+
+type Mutation{
+	saveEmployee(saveEmp: createEmployee): Employee
+	updateEmployeeById(id: ID,updateEmp: updateEmployee ): Employee
+	deleteEmployee(id: ID): Boolean
+}
+
+type Employee{
+	id: ID!
+	fullName: String
+	age: Int
+	address: String
+}
+
+input createEmployee{
+	fullName: String
+	age: Int
+	address: String
+}
+
+input updateEmployee{
+	fullName: String
+	age: Int
+	address: String
+}
